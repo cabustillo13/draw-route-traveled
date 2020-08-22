@@ -18,9 +18,15 @@ for s in itemlist:
 
     x.append(float(s.attributes['lat'].value))
     y.append(float(s.attributes['lon'].value))
-    
-#Graficar ruta recorrida
+   
+#Graficar ruta recorrida en 3D
 fig = plt.figure()
 ax = Axes3D(fig)
-ax.plot(x, y)
+ax.plot(x, y,color="red")
+plt.show()
+
+#Graficar ruta recorrida en 2D
+plt.plot(x,y,color="red")
+plt.axis('off')
+plt.savefig("Ejemplo.png", bbox_inches='tight',transparent=True)
 plt.show()
